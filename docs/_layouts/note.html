@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<article class="note">
+<a class="back" href="{{ '/' | relative_url }}">← 返回目录</a>
+<p class="eyebrow"><time datetime="{{ page.note_date | escape }}">{{ page.note_date | escape }}</time> / {{ page.topic | escape }}</p>
+<h1>{{ page.title | escape }}</h1>
+<p class="lede">{{ page.summary | escape }}</p>
+<div class="prose">{{ content }}</div>
+</article>

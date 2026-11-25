@@ -1,0 +1,18 @@
+---
+layout: default
+title: 首页
+---
+<section class="hero">
+<p class="eyebrow">每天一个历史故事</p>
+<h1>古人的难题，今天也会遇到。</h1>
+<p class="lede">给中学生的历史故事。每次跟着一个人做选择，再把故事里的办法用到自己的生活中。</p>
+</section>
+<section class="archive" aria-labelledby="archive">
+<h2 id="archive">故事目录</h2>
+{% assign notes = site.pages | where: 'layout', 'note' | sort: 'note_date' | reverse %}
+<ol class="entries">
+{% for note in notes %}
+<li><a href="{{ note.url | relative_url }}"><div><p class="eyebrow">{{ note.note_date | escape }} / {{ note.topic | escape }}</p><h3>{{ note.title | escape }}</h3><p>{{ note.summary | escape }}</p></div><span aria-hidden="true">↗</span></a></li>
+{% endfor %}
+</ol>
+</section>
